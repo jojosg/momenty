@@ -21,7 +21,7 @@ export default function GlobalLayout() {
           </div>
         </div>
       </header>
-      <main className="m-auto w-full max-w-175 flex-1 border-x px-4 py-6">
+      <main className="m-auto flex w-full max-w-175 flex-1 flex-col border-x px-4">
         {/* page 컴포넌트가 들어갈 곳 */}
         <Outlet />
       </main>
