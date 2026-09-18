@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from "react-router";
-import SigninPage from "./pages/sign-in-page";
-import SignupPage from "./pages/sign-up-page";
-import ForgetPasswordPage from "./pages/forget-password-page";
-import IndexPage from "./pages/index-page";
-import PostDetailPage from "./pages/post-detail-page";
-import ProfileDetailPage from "./pages/profile-detail-page";
-import ResetPasswordPage from "./pages/reset-password-page";
-import GlobalLayout from "./layout/global-layout";
+import SigninPage from "./pages/SignInPage";
+import SignupPage from "./pages/SignUpPage";
+import ForgetPasswordPage from "./pages/ForgetPasswordPage";
+import IndexPage from "./pages/IndexPage";
+import PostDetailPage from "./pages/PostDetailPage";
+import ProfileDetailPage from "./pages/ProfileDetailPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import GlobalLayout from "./layout/GlobalLayout";
 
 export default function RootRoute() {
   return (

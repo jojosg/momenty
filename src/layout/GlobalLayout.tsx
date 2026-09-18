@@ -5,12 +5,12 @@ import defaultAvatar from "@/assets/default-avatar.png";
 
 export default function GlobalLayout() {
   return (
-    <div className="flex min-h-[100vh] flex-col">
+    <div className="flex min-h-[100vh] flex-col bg-gray-50">
       <header className="h-15 border-b">
-        <div className="m-auto flex h-full w-full max-w-175 justify-between px-4">
+        <div className="m-auto flex h-full w-full max-w-320 justify-between px-4">
           <div className="flex items-center">
             <Link to={"/"}>
-              <img src={momenty} className="h-auto w-56" alt="모멘티" />
+              <img src={momenty} className="-ml-2 h-auto w-36 sm:w-56" alt="모멘티" />
             </Link>
           </div>
           <div className="flex items-center gap-5">
@@ -21,7 +21,7 @@ export default function GlobalLayout() {
           </div>
         </div>
       </header>
-      <main className="m-auto flex w-full max-w-175 flex-1 flex-col border-x px-4">
+      <main className="m-auto flex w-full max-w-320 flex-1 flex-col px-4">
         {/* page 컴포넌트가 들어갈 곳 */}
         <Outlet />
       </main>

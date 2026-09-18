@@ -1,6 +1,6 @@
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/Dialog";
+import { Button } from "@/components/ui/Button";
 
 type PostEditorModalProps = {
   open: boolean;

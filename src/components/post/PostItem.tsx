@@ -1,11 +1,11 @@
 import { HeartIcon, MessageCircle } from "lucide-react";
 import defaultAvatar from "@/assets/default-avatar.png";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
+} from "@/components/ui/Carousel";
 
 type PostItemProps = {
   content: string;
@@ -24,7 +24,7 @@ export default function PostItem({
   user,
 }: PostItemProps) {
   return (
-    <div className="flex flex-col gap-4 border-b pb-8">
+    <div className="flex flex-col gap-4 rounded-xl bg-white p-4 shadow-sm">
       {/* 1. 유저 정보, 수정/삭제 버튼 */}
       <div className="flex justify-between">
         {/* 1-1. 유저 정보 */}
@@ -36,7 +36,7 @@ export default function PostItem({
           />
           <div>
             <div className="font-bold hover:underline">{user.nickname}</div>
-            <div className="text-muted-foreground text-sm">
+            <div className="text-muted-foreground whitespace-nowrap text-sm">
               {new Date(createdAt).toLocaleString()}
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function PostItem({
         <Carousel>
           <CarouselContent>
             {imageUrls?.map((url, index) => (
-              <CarouselItem className={`basis-3/5`} key={index}>
+              <CarouselItem className="basis-4/5 sm:basis-3/5" key={index}>
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src={url}

@@ -19,7 +19,7 @@ const samplePosts = [
 
 export default function PostFeed() {
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {samplePosts.map((post) => (
         <PostItem key={post.id} {...post} />
       ))}
