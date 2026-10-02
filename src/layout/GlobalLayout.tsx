@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router";
 import momenty from "@/assets/momenty.png";
 import { SunIcon } from "lucide-react";
 import defaultAvatar from "@/assets/default-avatar.png";
+import ProfileButton from "./header/ProfileButton";
 
 export default function GlobalLayout() {
   return (
@@ -10,14 +11,18 @@ export default function GlobalLayout() {
         <div className="m-auto flex h-full w-full max-w-320 justify-between px-4">
           <div className="flex items-center">
             <Link to={"/"}>
-              <img src={momenty} className="-ml-2 h-auto w-36 sm:w-56" alt="모멘티" />
+              <img
+                src={momenty}
+                className="-ml-2 h-auto w-36 sm:w-56"
+                alt="모멘티"
+              />
             </Link>
           </div>
           <div className="flex items-center gap-5">
             <div className="hover:bg-muted cursor-pointer rounded-full p-2">
               <SunIcon />
             </div>
-            <img src={defaultAvatar} className="h-6" />
+            <ProfileButton />
           </div>
         </div>
       </header>
