@@ -9,9 +9,10 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { mutate: signUp } = useSignUp();
+  const { mutate: signUp, isPending: isSignUpPending } = useSignUp();
 
-  const handleSignUpClick = () => {
+  const handleSignUpClick = (e: React.FormEvent) => {
+    e.preventDefault();
     if (email.trim() === "") return;
     if (password.trim() === "") return;
 
@@ -21,7 +22,7 @@ export default function SignUp() {
     });
   };
   return (
-    <form noValidate className="flex flex-1">
+    <form noValidate className="flex flex-1" onSubmit={handleSignUpClick}>
       <div className="flex flex-1 items-center justify-center py-6">
         <div className="flex w-full max-w-[568px] flex-col items-center justify-center gap-4 rounded-2xl bg-white px-6 py-8 sm:gap-6 sm:rounded-3xl sm:px-14 sm:py-10">
           <div className="text-xl font-bold">회원가입</div>
@@ -31,6 +32,7 @@ export default function SignUp() {
                 아이디<span className="required">*</span>
               </FieldLabel>
               <Input
+                disabled={isSignUpPending}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full"
@@ -44,6 +46,7 @@ export default function SignUp() {
                 비밀번호<span className="required">*</span>
               </FieldLabel>
               <Input
+                disabled={isSignUpPending}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
@@ -56,6 +59,7 @@ export default function SignUp() {
                 비밀번호 확인<span className="required">*</span>
               </FieldLabel>
               <Input
+                disabled={isSignUpPending}
                 type="password"
                 placeholder="비밀번호를 한 번 더 입력해주세요"
               />
@@ -63,8 +67,8 @@ export default function SignUp() {
           </div>
           <div className="w-full">
             <Button
-              onClick={handleSignUpClick}
               type="submit"
+              disabled={isSignUpPending}
               className="w-full cursor-pointer text-lg"
             >
               회원가입
